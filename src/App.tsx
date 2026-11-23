@@ -1,4 +1,4 @@
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+import { HashRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { CardEditor } from './pages/CardEditor';
 import { DeckDetail } from './pages/DeckDetail';
 import { DeckList } from './pages/DeckList';
@@ -6,7 +6,7 @@ import { Study } from './pages/Study';
 
 export function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path="/" element={<DeckList />} />
         <Route path="/deck/:deckId" element={<DeckDetail />} />
@@ -15,6 +15,6 @@ export function App() {
         <Route path="/deck/:deckId/study" element={<Study />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
